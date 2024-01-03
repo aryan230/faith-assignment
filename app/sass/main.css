@@ -6,6 +6,10 @@
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 main {
   width: 100vw;
   min-height: 100vh;
@@ -25,7 +29,7 @@ main .top-banner {
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 1;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)), url("https://cdn.wionews.com/sites/default/files/inline-images/Nityanand%20Charan%20Das.jpg");
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0)), url("https://cdn.wionews.com/sites/default/files/inline-images/Nityanand%20Charan%20Das.jpg");
 }
 main .top-banner .top-content {
   width: 85%;
@@ -46,6 +50,15 @@ main .top-banner .top-content h1 {
   color: white;
   padding-bottom: 2rem;
 }
+@media only screen and (max-width: 600px) {
+  main .top-banner .top-content h1 {
+    font-size: 2rem;
+    font-family: "Merriweather", serif;
+    max-width: 100%;
+    color: white;
+    padding-bottom: 2rem;
+  }
+}
 main .middle-div {
   width: 60%;
   margin: 0 auto;
@@ -53,29 +66,47 @@ main .middle-div {
   z-index: 99;
   overflow: visible;
 }
+@media only screen and (max-width: 600px) {
+  main .middle-div {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  main .middle-div {
+    display: flex;
+    flex-direction: column;
+  }
+}
 main .middle-div .middle-left {
   width: 60%;
+}
+@media only screen and (max-width: 600px) {
+  main .middle-div .middle-left {
+    width: 100%;
+  }
 }
 main .middle-div .middle-left .top-tabs {
   width: 100%;
   margin: 1rem 0;
   display: flex;
 }
-main .middle-div .middle-left .top-tabs span {
+main .middle-div .middle-left .top-tabs a {
   width: -moz-fit-content;
   width: fit-content;
   text-align: center;
   padding: 0.5rem 3rem;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   text-transform: uppercase;
   font-family: "Open Sans";
   font-weight: 800;
   color: rgba(0, 0, 0, 0.66);
+  text-decoration: none;
+  transition: 0.2s all cubic-bezier(0.12, 0, 0.39, 0);
 }
-main .middle-div .middle-left .top-tabs span:hover {
+main .middle-div .middle-left .top-tabs a:hover {
   cursor: pointer;
 }
-main .middle-div .middle-left .top-tabs span.active {
+main .middle-div .middle-left .top-tabs a.active {
   border-bottom: 3px solid #7c3aed;
 }
 main .middle-div .middle-left .content {
@@ -120,6 +151,11 @@ main .middle-div .middle-right {
   width: 40%;
   overflow: visible;
 }
+@media only screen and (max-width: 600px) {
+  main .middle-div .middle-right {
+    display: none;
+  }
+}
 main .middle-div .middle-right .main-inside-price {
   width: 25vw;
   height: -moz-fit-content;
@@ -127,10 +163,17 @@ main .middle-div .middle-right .main-inside-price {
   position: absolute;
   bottom: 20%;
   left: 60%;
-  transform: translateY(-2rem);
   background-color: rgb(246, 238, 248);
   padding: 2rem;
   z-index: 99;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 5px;
+}
+@media only screen and (max-width: 600px) {
+  main .middle-div .middle-right .main-inside-price {
+    bottom: 0%;
+    width: 80vw;
+  }
 }
 main .middle-div .middle-right .main-inside-price span {
   font-size: 0.8rem;
@@ -165,7 +208,7 @@ main .middle-div .middle-right .main-inside-price .price-bottom .whats-included 
   margin-right: 0.5rem;
 }
 main .middle-div .middle-right .main-inside-price .price-bottom button {
-  width: 100%;
+  width: 90%;
   outline: 0px;
   border: 0px;
   color: white;
@@ -174,12 +217,22 @@ main .middle-div .middle-right .main-inside-price .price-bottom button {
   border-radius: 100px;
   padding: 0.7rem 0;
   margin: 1rem auto;
-  background-color: #5b21b6;
+  background: linear-gradient(to bottom, #7c3aed, #5b21b6);
+  transition: 0.2s all cubic-bezier(0.12, 0, 0.39, 0);
+}
+main .middle-div .middle-right .main-inside-price .price-bottom button:hover {
+  cursor: pointer;
+  width: 100%;
 }
 main .about-the-instructor {
   width: 60%;
   margin: 0 auto;
   margin-top: 2rem;
+}
+@media only screen and (max-width: 600px) {
+  main .about-the-instructor {
+    width: 90%;
+  }
 }
 main .about-the-instructor h1 {
   font-size: 1.5rem;
@@ -226,6 +279,12 @@ main .about-the-instructor .inside-about .inside-about-handles {
   align-items: center;
   justify-content: flex-start;
 }
+@media only screen and (max-width: 600px) {
+  main .about-the-instructor .inside-about .inside-about-handles {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 main .about-the-instructor .inside-about .inside-about-handles span {
   display: flex;
   align-items: center;
@@ -233,6 +292,11 @@ main .about-the-instructor .inside-about .inside-about-handles span {
   font-family: "karla";
   margin-right: 2rem;
   font-size: 0.8rem;
+}
+@media only screen and (max-width: 600px) {
+  main .about-the-instructor .inside-about .inside-about-handles span {
+    margin: 0.5rem 0;
+  }
 }
 main .about-the-instructor .inside-about .inside-about-handles span img {
   width: 1rem;
@@ -243,15 +307,27 @@ main .about-the-instructor .inside-about .inside-about-handles span img {
 }
 main .testimonial {
   width: 70%;
-  margin: 2rem auto;
+  margin: 5rem auto;
   padding: 2rem;
   border-radius: 1rem;
   background-color: rgba(230, 230, 230, 0.594);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin-bottom: 5rem;
+}
+@media only screen and (max-width: 600px) {
+  main .testimonial {
+    width: 90%;
+  }
 }
 main .testimonial .testimonial-inside {
   width: 60%;
   margin: 0 auto;
   padding-top: 2rem;
+}
+@media only screen and (max-width: 600px) {
+  main .testimonial .testimonial-inside {
+    width: 90%;
+  }
 }
 main .testimonial .testimonial-inside h1 {
   font-family: "Merriweather", serif;

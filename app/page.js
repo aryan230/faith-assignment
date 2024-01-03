@@ -1,5 +1,8 @@
+"use client";
+
 import { Check, MessageCircle, MonitorPlay, Youtube } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import ReactHtmlParser, {
   processNodes,
   convertNodeToElement,
@@ -52,7 +55,14 @@ export default function Home() {
       reviewer_designation: "Designation of the reviewer",
     },
   };
-
+  const scrolltoHash = function (element_id) {
+    const element = document.getElementById(element_id);
+    element?.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+      inline: "nearest",
+    });
+  };
   return (
     <main>
       <div className="top-banner">
@@ -61,12 +71,15 @@ export default function Home() {
           <h1>{data.course.title}</h1>
         </div>
       </div>
-      <div className="middle-div">
+      <div className="middle-div" id="about">
         <div className="middle-left">
           <div className="top-tabs">
-            <span className="active">About</span>
-            <span>Instructor</span>
-            <span>Reviews</span>
+            <a href="#about" className="active">
+              About
+            </a>
+
+            <a href="#instructor">Instructor</a>
+            <a href="#test">Reviews</a>
           </div>
           <div className="content">
             <h1>About the course</h1>
@@ -155,7 +168,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="about-the-instructor">
+      <div className="about-the-instructor" id="instructor">
         <h1>About the Instructor</h1>
         <div className="inside-about">
           <img src="https://pbs.twimg.com/profile_images/1650049387224080384/WAVo3FHK_400x400.jpg" />
@@ -201,7 +214,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="testimonial">
+      <div className="testimonial" id="test">
         <div className="testimonial-inside">
           <h1>
             "But I must explain to you how all this mistaken idea of denouncing
